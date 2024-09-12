@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class PlayerService {
 
-  private apiUrl = 'http://ec2-15-236-39-183.eu-west-3.compute.amazonaws.com:8000/api/player'; // Alterar para o seu endpoint correto
+  private apiUrl = 'http://localhost:8000/api/player';
 
   constructor(private http: HttpClient) {}
 
