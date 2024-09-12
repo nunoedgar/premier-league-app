@@ -1,11 +1,11 @@
 export class Player {
-    id: number;
-    name: string;
-    age: number;
-    teamId: number;
-    teamName: string;
+    id: number | undefined;
+    name: string | undefined;
+    age: number | undefined;
+    teamId: number | undefined;
+    teamName: string | undefined;
   
-    constructor(id: number, name: string, age: number, teamId: number, teamName: string) {
+    constructor(id: number | undefined, name: string | undefined, age: number | undefined, teamId?: number | undefined, teamName?: string | undefined) {
       this.id = id;
       this.name = name;
       this.age = age;

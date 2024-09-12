@@ -17,9 +17,12 @@ export class PlayerService {
     return this.http.get(this.apiUrl);
   }
 
-  updatePlayer(player: Player): Observable<any> {
-    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+  updatePlayer(player: Player): Observable<any> {    
     const url = `${this.apiUrl}/${player.id}`;  
-    return this.http.put(url, player, {headers});
+    return this.http.put(url, player);
+  }
+
+  createPlayer(player: Player): Observable<any> {         
+    return this.http.post(this.apiUrl, player);
   }
 }

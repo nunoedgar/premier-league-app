@@ -7,7 +7,7 @@
           <th>Name</th>
           <th>Age</th>
           <th>Team</th>
-          <th></th>
+          <th><p-button (onClick)="showCreatePlayer()" label="+" /></th>
       </tr>
   </ng-template>
   <ng-template pTemplate="body" let-player let-editing="editing" let-ri="rowIndex">
@@ -80,4 +80,34 @@
   </tr>
   </ng-template>
 </p-table>
+
+
+<p-dialog header="Create Player" [modal]="true" [(visible)]="showCreatePlayerDialog" [style]="{ width: '35rem' }">
+    <table>            
+        <tr>
+            <td>
+                <label for="name" class="font-semibold w-6rem">Name</label>
+            </td>
+            <td>
+                <input pInputText id="name" class="flex-auto" autocomplete="off" [(ngModel)]="newPlayer.name" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="age" class="font-semibold w-6rem">Age</label>
+            </td>
+            <td>
+                <input pInputText id="age" class="flex-auto" autocomplete="off" [(ngModel)]="newPlayer.age"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p-button label="Cancel" severity="secondary" (onClick)="showCreatePlayerDialog = false" />
+            </td>
+            <td>
+                <p-button label="Save" (onClick)="createPlayer(newPlayer)" />
+            </td>
+        </tr>
+    </table>    
+</p-dialog>
 </div>
